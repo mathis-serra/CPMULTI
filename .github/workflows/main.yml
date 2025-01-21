@@ -11,9 +11,9 @@ jobs:
       with:
         cmake-version: '3.18.0'
 
-    - name: Install Homebrew
-      run: |
-        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    # - name: Install Homebrew
+    #   run: |
+    #     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
     - name: Install OpenCV using Homebrew
       run: |
