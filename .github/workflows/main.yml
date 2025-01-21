@@ -1,33 +1,56 @@
+name: Build and Test OpenCV Program
+
+on:
+  push:
+    branches:
+      - Mac-Features/MS  # This will trigger the workflow only for pushes to the 'Mac-Features/MS' branch
+  pull_request:
+    branches:
+      - Mac-Features/MS  # This will trigger the workflow for pull requests targeting the 'Mac-Features/MS' branch
+  workflow_dispatch:  # This allows you to manually trigger the workflow
+
 jobs:
   build:
-    runs-on: ubuntu-latest  # You can change this to 'macos-latest' if needed
+    runs-on: ubuntu-latest  # You can change this to 'macos-latest' if you want a macOS runner
 
     steps:
+    # Step 1: Checkout repository
     - name: Checkout repository
       uses: actions/checkout@v2
 
+    # Step 2: Set up CMake
     - name: Set up CMake
       uses: jwlawson/actions-setup-cmake@v1.9
       with:
         cmake-version: '3.18.0'
 
+    # Step 3: Install OpenCV
     - name: Install OpenCV
       run: |
         sudo apt-get update -y
         sudo apt-get install -y libopencv-dev
 
-    - name: Clean build directory
+    # Step 4: Print the current working directory
+    - name: Print current working directory
       run: |
-        rm -rf build  # This will delete the existing build directory
-        mkdir -p build  # Recreate the build directory
+        echo "Current directory:"
+        pwd  # This will print the current working directory
+        ls -la  # This will list files in the current directory
+    
+    - name: Remove CMakeCache.txt
+      run: |
+        rm -f build/CMakeCache.txt
 
+    # Step 5: Build the program
     - name: Build program
       run: |
+        mkdir -p build
         cd build
         cmake ..
         make
 
+    # Step 6: Run the program
     - name: Run the program
       run: |
         cd build
-        ./main  # Make sure 'main' is the name of your executable
+        ./main  # Ensure that 'main' is the name of your executable
