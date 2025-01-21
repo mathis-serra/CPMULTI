@@ -24,17 +24,13 @@ jobs:
       with:
         cmake-version: '3.18.0'   # Version de CMake à utiliser
 
-    # - name: Install OpenCV
-    #   run: |
-    #     sudo apt-get update -y
-    #     sudo apt-get install -y libopencv-dev
 
     - name: Clean build directory
       run: |
         rm -rf build  # This will delete the existing build directory
         mkdir -p build  # Recreate the build directory
     
-    
+
     - name: Build program
       run: |
         cd build
