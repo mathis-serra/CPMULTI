@@ -1,0 +1,28 @@
+# Fichiers et dossiers spécifiques aux IDE
+.vscode/            # Visual Studio Code
+.idea/              # JetBrains IDEs (comme IntelliJ, CLion, etc.)
+*.suo               # Visual Studio (Windows)
+*.user              # Visual Studio
+
+# Build system
+CMakeLists.txt.user # Fichiers spécifiques à CMake
+build/              # Dossier de build général (à adapter selon votre projet)
+*.o                 # Fichiers d'objet (compilés)
+
+# Dépendances locales
+node_modules/       # Si vous utilisez Node.js
+vendor/             # Dépendances PHP ou similaires
+.env                # Fichiers d'environnement
+
+# Systèmes d'exploitation
+.DS_Store           # macOS
+Thumbs.db           # Windows
+
+# Logs
+*.log
+
+# Fichiers binaires
+*.exe
+*.dll
+*.dmg
+*.so
