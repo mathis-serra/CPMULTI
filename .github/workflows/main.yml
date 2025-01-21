@@ -3,10 +3,11 @@ name: Build and Test OpenCV Program
 on:
   push:
     branches:
-      - main   # Changez cela en fonction de votre branche par défaut
+      - Mac-Features/MS
   pull_request:
     branches:
-      - main
+      - Mac-Features/MS
+
 
 jobs:
   build:
