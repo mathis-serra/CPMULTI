@@ -1,0 +1,3 @@
+/Users/mathisserra/Desktop/Github/B2_Laplateforme/c++/opencv-setup/build/CMakeFiles/MyProject.dir
+/Users/mathisserra/Desktop/Github/B2_Laplateforme/c++/opencv-setup/build/CMakeFiles/edit_cache.dir
+/Users/mathisserra/Desktop/Github/B2_Laplateforme/c++/opencv-setup/build/CMakeFiles/rebuild_cache.dir
