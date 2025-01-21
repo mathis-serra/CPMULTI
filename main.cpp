@@ -37,7 +37,7 @@ void multiThreadProcessing(Mat &img, int choice) {
 }
 
 int main() {
-    string filename = "totorableu.png";
+    string filename = "assets/totorableu.png";
     Mat img = imread(filename);
 
     if (img.empty()) {
