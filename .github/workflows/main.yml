@@ -53,4 +53,4 @@ jobs:
     - name: Run the program
       run: |
         cd build
-        ./main  # Ensure that 'main' is the name of your executable
+        ./MyProject  # Ensure that 'main' is the name of your executable
