@@ -1,40 +1,38 @@
-name: Build and Test OpenCV Program
-
-on:
-  push:
-    branches:
-      - Mac-Features/MS
-  pull_request:
-    branches:
-      - Mac-Features/MS
-
-
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest  # Use macOS runner
 
     steps:
-    # Étape 1 : Vérifier le code depuis le dépôt
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    # Étape 2 : Installer les dépendances (CMake et OpenCV)
     - name: Set up CMake
       uses: jwlawson/actions-setup-cmake@v1.9
       with:
-        cmake-version: '3.18.0'   # Version de CMake à utiliser
+        cmake-version: '3.18.0'
 
+    - name: Install Homebrew
+      run: |
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+    - name: Install OpenCV using Homebrew
+      run: |
+        brew update
+        brew install opencv
 
     - name: Clean build directory
       run: |
         rm -rf build  # This will delete the existing build directory
         mkdir -p build  # Recreate the build directory
-    
+
+    - name: Configure CMake to find OpenCV
+      run: |
+        cd build
+        cmake .. -DOpenCV_DIR=/opt/homebrew/opt/opencv@4/share/opencv4  # Set the correct OpenCV path
 
     - name: Build program
       run: |
         cd build
-        cmake ..
         make
 
     # Étape 4 : Exécuter le programme pour vérifier s'il fonctionne
