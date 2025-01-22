@@ -5,14 +5,14 @@
 *.user              # Visual Studio
 
 # Build system
-cmake-build-debug/
+/cmake-build-debug
+/.idea
+*..txt
 CMakeLists.txt.user # Fichiers spécifiques à CMake
 build/              # Dossier de build général (à adapter selon votre projet)
 *.o                 # Fichiers d'objet (compilés)
 
 # Dépendances locales
-node_modules/       # Si vous utilisez Node.js
-vendor/             # Dépendances PHP ou similaires
 .env                # Fichiers d'environnement
 
 # Systèmes d'exploitation
@@ -27,52 +27,4 @@ Thumbs.db           # Windows
 *.dll
 *.dmg
 *.so
-/cmake-build-debug/.ninja_deps
-/cmake-build-debug/.ninja_log
-/cmake-build-debug/build.ninja
-/cmake-build-debug/.cmake/api/v1/query/cache-v2
-/cmake-build-debug/.cmake/api/v1/reply/cache-v2-366620a216a41cfe8ea0.json
-/cmake-build-debug/CMakeFiles/clion-Debug-log.txt
-/cmake-build-debug/CMakeFiles/clion-environment.txt
-/cmake-build-debug/CMakeFiles/cmake.check_cache
-/cmake-build-debug/cmake_install.cmake
-/cmake-build-debug/CMakeCache.txt
-/cmake-build-debug/CMakeFiles/3.30.5/CMakeCCompiler.cmake
-/cmake-build-debug/CMakeFiles/3.30.5/CompilerIdC/CMakeCCompilerId.c
-/cmake-build-debug/CMakeFiles/3.30.5/CompilerIdC/CMakeCCompilerId.obj
-/cmake-build-debug/CMakeFiles/CMakeConfigureLog.yaml
-/cmake-build-debug/CMakeFiles/3.30.5/CMakeCXXCompiler.cmake
-/cmake-build-debug/CMakeFiles/3.30.5/CompilerIdCXX/CMakeCXXCompilerId.cpp
-/cmake-build-debug/CMakeFiles/3.30.5/CompilerIdCXX/CMakeCXXCompilerId.obj
-/cmake-build-debug/CMakeFiles/3.30.5/CMakeDetermineCompilerABI_C.bin
-/cmake-build-debug/CMakeFiles/3.30.5/CMakeDetermineCompilerABI_CXX.bin
-/cmake-build-debug/.cmake/api/v1/query/cmakeFiles-v1
-/cmake-build-debug/.cmake/api/v1/reply/cmakeFiles-v1-c657dec6d3cb7539844f.json
-/cmake-build-debug/CMakeFiles/3.30.5/CMakeRCCompiler.cmake
-/cmake-build-debug/CMakeFiles/3.30.5/CMakeSystem.cmake
-/cmake-build-debug/.cmake/api/v1/query/codemodel-v2
-/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-dc2217708dda42747eee.json
-/cmake-build-debug/CPMULTI.ilk
-/.idea/CPMULTI.iml
-/cmake-build-debug/CPMULTI.pdb
-/cmake-build-debug/.cmake/api/v1/reply/directory-.-Debug-d0094a50bb2071803777.json
-/.idea/editor.xml
-/cmake-build-debug/CMakeFiles/CPMULTI.dir/embed.manifest
-/cmake-build-debug/CMakeFiles/ShowIncludes/foo.h
-/cmake-build-debug/.cmake/api/v1/reply/index-2025-01-22T08-58-49-0654.json
-/cmake-build-debug/CMakeFiles/CPMULTI.dir/intermediate.manifest
-/cmake-build-debug/CMakeFiles/ShowIncludes/main.c
-/cmake-build-debug/CMakeFiles/CPMULTI.dir/main.cpp.obj
-/cmake-build-debug/CMakeFiles/ShowIncludes/main.obj
-/cmake-build-debug/CMakeFiles/CPMULTI.dir/manifest.rc
-/cmake-build-debug/CMakeFiles/CPMULTI.dir/manifest.res
-/.idea/misc.xml
-/.idea/modules.xml
-/cmake-build-debug/CMakeFiles/rules.ninja
-/cmake-build-debug/.cmake/api/v1/reply/target-CPMULTI-Debug-6fede1cb1c5c055dfb1d.json
-/cmake-build-debug/CMakeFiles/TargetDirectories.txt
-/cmake-build-debug/.cmake/api/v1/query/toolchains-v1
-/cmake-build-debug/.cmake/api/v1/reply/toolchains-v1-19ba44d90e9ecc071af0.json
-/cmake-build-debug/CMakeFiles/CPMULTI.dir/vc140.pdb
-/.idea/vcs.xml
-/.idea/workspace.xml
+
