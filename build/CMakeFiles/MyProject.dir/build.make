@@ -86,14 +86,62 @@ CMakeFiles/MyProject.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/MyProject.dir/main.cpp.s"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/mathisserra/Desktop/Github/B2_Laplateforme/CPMULTI/main.cpp -o CMakeFiles/MyProject.dir/main.cpp.s
 
+CMakeFiles/MyProject.dir/src/Application.cpp.o: CMakeFiles/MyProject.dir/flags.make
+CMakeFiles/MyProject.dir/src/Application.cpp.o: /Users/mathisserra/Desktop/Github/B2_Laplateforme/CPMULTI/src/Application.cpp
+CMakeFiles/MyProject.dir/src/Application.cpp.o: CMakeFiles/MyProject.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/mathisserra/Desktop/Github/B2_Laplateforme/CPMULTI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/MyProject.dir/src/Application.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MyProject.dir/src/Application.cpp.o -MF CMakeFiles/MyProject.dir/src/Application.cpp.o.d -o CMakeFiles/MyProject.dir/src/Application.cpp.o -c /Users/mathisserra/Desktop/Github/B2_Laplateforme/CPMULTI/src/Application.cpp
+
+CMakeFiles/MyProject.dir/src/Application.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/MyProject.dir/src/Application.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/mathisserra/Desktop/Github/B2_Laplateforme/CPMULTI/src/Application.cpp > CMakeFiles/MyProject.dir/src/Application.cpp.i
+
+CMakeFiles/MyProject.dir/src/Application.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/MyProject.dir/src/Application.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/mathisserra/Desktop/Github/B2_Laplateforme/CPMULTI/src/Application.cpp -o CMakeFiles/MyProject.dir/src/Application.cpp.s
+
+CMakeFiles/MyProject.dir/src/ImageProcessor.cpp.o: CMakeFiles/MyProject.dir/flags.make
+CMakeFiles/MyProject.dir/src/ImageProcessor.cpp.o: /Users/mathisserra/Desktop/Github/B2_Laplateforme/CPMULTI/src/ImageProcessor.cpp
+CMakeFiles/MyProject.dir/src/ImageProcessor.cpp.o: CMakeFiles/MyProject.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/mathisserra/Desktop/Github/B2_Laplateforme/CPMULTI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/MyProject.dir/src/ImageProcessor.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MyProject.dir/src/ImageProcessor.cpp.o -MF CMakeFiles/MyProject.dir/src/ImageProcessor.cpp.o.d -o CMakeFiles/MyProject.dir/src/ImageProcessor.cpp.o -c /Users/mathisserra/Desktop/Github/B2_Laplateforme/CPMULTI/src/ImageProcessor.cpp
+
+CMakeFiles/MyProject.dir/src/ImageProcessor.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/MyProject.dir/src/ImageProcessor.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/mathisserra/Desktop/Github/B2_Laplateforme/CPMULTI/src/ImageProcessor.cpp > CMakeFiles/MyProject.dir/src/ImageProcessor.cpp.i
+
+CMakeFiles/MyProject.dir/src/ImageProcessor.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/MyProject.dir/src/ImageProcessor.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/mathisserra/Desktop/Github/B2_Laplateforme/CPMULTI/src/ImageProcessor.cpp -o CMakeFiles/MyProject.dir/src/ImageProcessor.cpp.s
+
+CMakeFiles/MyProject.dir/src/Utils.cpp.o: CMakeFiles/MyProject.dir/flags.make
+CMakeFiles/MyProject.dir/src/Utils.cpp.o: /Users/mathisserra/Desktop/Github/B2_Laplateforme/CPMULTI/src/Utils.cpp
+CMakeFiles/MyProject.dir/src/Utils.cpp.o: CMakeFiles/MyProject.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/mathisserra/Desktop/Github/B2_Laplateforme/CPMULTI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/MyProject.dir/src/Utils.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MyProject.dir/src/Utils.cpp.o -MF CMakeFiles/MyProject.dir/src/Utils.cpp.o.d -o CMakeFiles/MyProject.dir/src/Utils.cpp.o -c /Users/mathisserra/Desktop/Github/B2_Laplateforme/CPMULTI/src/Utils.cpp
+
+CMakeFiles/MyProject.dir/src/Utils.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/MyProject.dir/src/Utils.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/mathisserra/Desktop/Github/B2_Laplateforme/CPMULTI/src/Utils.cpp > CMakeFiles/MyProject.dir/src/Utils.cpp.i
+
+CMakeFiles/MyProject.dir/src/Utils.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/MyProject.dir/src/Utils.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/mathisserra/Desktop/Github/B2_Laplateforme/CPMULTI/src/Utils.cpp -o CMakeFiles/MyProject.dir/src/Utils.cpp.s
+
 # Object files for target MyProject
 MyProject_OBJECTS = \
-"CMakeFiles/MyProject.dir/main.cpp.o"
+"CMakeFiles/MyProject.dir/main.cpp.o" \
+"CMakeFiles/MyProject.dir/src/Application.cpp.o" \
+"CMakeFiles/MyProject.dir/src/ImageProcessor.cpp.o" \
+"CMakeFiles/MyProject.dir/src/Utils.cpp.o"
 
 # External object files for target MyProject
 MyProject_EXTERNAL_OBJECTS =
 
 MyProject: CMakeFiles/MyProject.dir/main.cpp.o
+MyProject: CMakeFiles/MyProject.dir/src/Application.cpp.o
+MyProject: CMakeFiles/MyProject.dir/src/ImageProcessor.cpp.o
+MyProject: CMakeFiles/MyProject.dir/src/Utils.cpp.o
 MyProject: CMakeFiles/MyProject.dir/build.make
 MyProject: /opt/homebrew/lib/libopencv_gapi.4.11.0.dylib
 MyProject: /opt/homebrew/lib/libopencv_stitching.4.11.0.dylib
@@ -152,7 +200,7 @@ MyProject: /opt/homebrew/lib/libopencv_photo.4.11.0.dylib
 MyProject: /opt/homebrew/lib/libopencv_imgproc.4.11.0.dylib
 MyProject: /opt/homebrew/lib/libopencv_core.4.11.0.dylib
 MyProject: CMakeFiles/MyProject.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/mathisserra/Desktop/Github/B2_Laplateforme/CPMULTI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable MyProject"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/mathisserra/Desktop/Github/B2_Laplateforme/CPMULTI/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable MyProject"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/MyProject.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
