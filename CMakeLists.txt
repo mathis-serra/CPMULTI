@@ -1,25 +1,22 @@
 cmake_minimum_required(VERSION 3.30)
 project(CPMULTI)
 
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 20)
 
-#set(OpenCV_DIR "C:/opencv/opencv/build/lib")
+# Chemin vers OpenCV
+set(OpenCV_DIR "C:/opencv/build")
 
-
-# Rechercher OpenCV
+# Trouver les paquets OpenCV
 find_package(OpenCV REQUIRED)
+
+# Ajouter les répertoires d'inclusion
 include_directories(${OpenCV_INCLUDE_DIRS})
 
 # Copier les fichiers .dll
-set(OpenCV_DLL_DIR "C:/tools/opencv/build/bin")
+set(OpenCV_DLL_DIR "C:/opencv/build/x64/vc16/bin")
 file(GLOB OpenCV_DLLS "${OpenCV_DLL_DIR}/*.dll")
 file(COPY ${OpenCV_DLLS} DESTINATION ${CMAKE_BINARY_DIR})
 
-# Définir l'exécutable
+# Lier les bibliothèques OpenCV à votre projet
 add_executable(CPMULTI main.cpp)
-
-# Lier les bibliothèques d'OpenCV
 target_link_libraries(CPMULTI ${OpenCV_LIBS})
-
-
-

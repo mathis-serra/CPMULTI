@@ -3,7 +3,7 @@
 
 int main() {
     std::cerr << "Hello World!\n";
-    cv::Mat image = cv::imread("C:/Users/drvba/OneDrive/Bureau/test_image.png");
+    cv::Mat image = cv::imread("C:/Users/walid/OneDrive/Images/deadpool.png");
     if (image.empty()) {
         std::cout << "Image non trouvée !" << std::endl;
         return -1;

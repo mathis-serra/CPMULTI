@@ -1,0 +1,3 @@
+C:/Users/walid/OneDrive/Bureau/la-plateforme/B2/devoirs/C++/CPMULTI/cmake-build-debug/CMakeFiles/CPMULTI.dir
+C:/Users/walid/OneDrive/Bureau/la-plateforme/B2/devoirs/C++/CPMULTI/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/walid/OneDrive/Bureau/la-plateforme/B2/devoirs/C++/CPMULTI/cmake-build-debug/CMakeFiles/rebuild_cache.dir

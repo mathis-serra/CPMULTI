@@ -1,0 +1,7 @@
+C:\Users\walid\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=C:/Users/walid/AppData/Local/Programs/CLion/bin/ninja/win/x64/ninja.exe -G Ninja -S C:\Users\walid\OneDrive\Bureau\la-plateforme\B2\devoirs\C++\CPMULTI -B C:\Users\walid\OneDrive\Bureau\la-plateforme\B2\devoirs\C++\CPMULTI\cmake-build-debug
+CMake Error at CMakeLists.txt:4:
+  Parse error.  Expected a command name, got unquoted argument with text
+  "<<<<<<<".
+
+
+-- Configuring incomplete, errors occurred!

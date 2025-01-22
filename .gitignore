@@ -5,13 +5,11 @@
 *.user              # Visual Studio
 
 # Build system
-CMakeLists.txt.user # Fichiers spécifiques à CMake
+*..txt # Fichiers spécifiques à CMake
 build/              # Dossier de build général (à adapter selon votre projet)
 *.o                 # Fichiers d'objet (compilés)
 
 # Dépendances locales
-node_modules/       # Si vous utilisez Node.js
-vendor/             # Dépendances PHP ou similaires
 .env                # Fichiers d'environnement
 
 # Systèmes d'exploitation
