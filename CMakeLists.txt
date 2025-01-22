@@ -1,8 +1,25 @@
-cmake_minimum_required(VERSION 3.10)
-project(MyProject)
+cmake_minimum_required(VERSION 3.30)
+project(multithread)
 
+set(CMAKE_CXX_STANDARD 17)
+
+#set(OpenCV_DIR "C:/opencv/opencv/build/lib")
+
+
+# Rechercher OpenCV
 find_package(OpenCV REQUIRED)
 include_directories(${OpenCV_INCLUDE_DIRS})
 
-add_executable(MyProject main.cpp)  # Make sure 'main.cpp' is here!
-target_link_libraries(MyProject ${OpenCV_LIBS})
+# Copier les fichiers .dll
+set(OpenCV_DLL_DIR "C:/tools/opencv/build/bin")
+file(GLOB OpenCV_DLLS "${OpenCV_DLL_DIR}/*.dll")
+file(COPY ${OpenCV_DLLS} DESTINATION ${CMAKE_BINARY_DIR})
+
+# Définir l'exécutable
+add_executable(multithread main.cpp)
+
+# Lier les bibliothèques d'OpenCV
+target_link_libraries(multithread ${OpenCV_LIBS})
+
+
+

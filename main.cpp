@@ -44,7 +44,7 @@ void multiThreadProcessing(Mat &img, int choice) {
 int main() {
     
 
-    string filename = "/Users/mathisserra/Desktop/Github/B2_Laplateforme/CPMULTI/assets/totorableu.png";
+    string filename = "C:/Users/drvba/OneDrive/Bureau/test_image.png";
     Mat img = imread(filename);
 
     if (img.empty()) {
