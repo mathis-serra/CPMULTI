@@ -11,7 +11,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest  # You can change this to 'macos-latest' if you want a macOS runner
+    runs-on: macos-latest # You can change this to 'macos-latest' if you want a macOS runner
 
     steps:
     # Step 1: Checkout repository
@@ -30,12 +30,15 @@ jobs:
         sudo apt-get update -y
         sudo apt-get install -y libopencv-dev
 
-    # Step 4: Print the current working directory
+    
+    # Step 4: Print the current working directory and files
     - name: Print current working directory
       run: |
         echo "Current directory:"
-        pwd  # This will print the current working directory
-        ls -la  # This will list files in the current directory
+        pwd
+        ls -la
+        ls -la assets  # Check if the image exists inside the 'assets' folder
+  
     
     - name: Remove CMakeCache.txt
       run: |

@@ -39,7 +39,7 @@ void multiThreadProcessing(Mat &img, int choice) {
 int main() {
     cout << "Current working directory: " << filesystem::current_path() << endl;
 
-    string filename = "/Users/mathisserra/Desktop/Github/B2_Laplateforme/CPMULTI/assets/totorableu.png";
+    string filename = "/assets/totorableu.png";
     Mat img = imread(filename);
 
     if (img.empty()) {
