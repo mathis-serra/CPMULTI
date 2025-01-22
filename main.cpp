@@ -93,4 +93,3 @@ int main() {
 
 
 
-// /Users/mathisserra/Downloads/totoro blanc.png

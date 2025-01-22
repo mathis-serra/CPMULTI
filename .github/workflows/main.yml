@@ -40,9 +40,9 @@ jobs:
         ls -la assets  # Check if the image exists inside the 'assets' folder
   
     
-    # - name: Remove CMakeCache.txt
-    #   run: |
-    #     rm -f build/CMakeCache.txt
+    - name: Remove CMakeCache.txt
+      run: |
+        rm -f build/CMakeCache.txt
 
     # Step 5: Build the program
     - name: Build program
