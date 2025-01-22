@@ -24,12 +24,12 @@ jobs:
       with:
         cmake-version: '3.18.0'
 
-    # Step 3: Install OpenCV
+       # Step 3: Install OpenCV on macOS
     - name: Install OpenCV
       run: |
-        sudo apt-get update -y
-        sudo apt-get install -y libopencv-dev
-
+        brew update        
+        brew install opencv
+ 
     
     # Step 4: Print the current working directory and files
     - name: Print current working directory
