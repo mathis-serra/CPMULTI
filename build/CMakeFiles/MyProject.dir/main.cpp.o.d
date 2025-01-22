@@ -855,5 +855,4 @@ CMakeFiles/MyProject.dir/main.cpp.o: \
   /opt/homebrew/Cellar/opencv/4.11.0/include/opencv4/opencv2/video.hpp \
   /opt/homebrew/Cellar/opencv/4.11.0/include/opencv4/opencv2/video/tracking.hpp \
   /opt/homebrew/Cellar/opencv/4.11.0/include/opencv4/opencv2/video/background_segm.hpp \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/thread \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/condition_variable
+  /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/thread

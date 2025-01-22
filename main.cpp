@@ -2,20 +2,16 @@
 #include <opencv2/opencv.hpp>
 #include <thread>
 #include <chrono>
-#include <mutex>
-#include <condition_variable>
 
 using namespace std;
 using namespace cv;
 using namespace std::chrono;
 
-mutex mtx;
-condition_variable cv;
-bool topHalfProcessed = false;
-bool bottomHalfProcessed = false;
-
 void applyGaussianBlur(Mat &img) {
-    GaussianBlur(img, img, Size(5, 5), 1.5); // Optimized blur
+
+   // GaussianBlur(img, img, Size(15, 15), 5);  This operation is very expensive in calcul for the machine 
+    GaussianBlur(img, img, Size(5, 5), 1.5); // For optimisation I reduced the cells of the blur to be faster 
+
 }
 
 void applyEdgeDetection(Mat &img) {
@@ -32,58 +28,22 @@ void singleThreadProcessing(Mat &img, int choice) {
     }
 }
 
-// Function to handle the processing of each half of the image with synchronization
-void processTopHalf(Mat &topHalf, int choice) {
-    if (choice == 1) {
-        applyGaussianBlur(topHalf);
-    } else if (choice == 2) {
-        applyEdgeDetection(topHalf);
-    }
-    // Notify that the top half is processed
-    {
-        lock_guard<mutex> lock(mtx);
-        topHalfProcessed = true;
-    }
-    cv.notify_all();
-}
 
-void processBottomHalf(Mat &bottomHalf, int choice) {
-    if (choice == 1) {
-        applyGaussianBlur(bottomHalf);
-    } else if (choice == 2) {
-        applyEdgeDetection(bottomHalf);
-    }
-    // Notify that the bottom half is processed
-    {
-        lock_guard<mutex> lock(mtx);
-        bottomHalfProcessed = true;
-    }
-    cv.notify_all();
-}
-
+// MultiThreads could be pricier for your machine 
 void multiThreadProcessing(Mat &img, int choice) {
     Mat topHalf = img(Rect(0, 0, img.cols, img.rows / 2));
     Mat bottomHalf = img(Rect(0, img.rows / 2, img.cols, img.rows / 2));
 
-    thread t1(processTopHalf, std::ref(topHalf), choice);
-    thread t2(processBottomHalf, std::ref(bottomHalf), choice);
+    thread t1((choice == 1) ? applyGaussianBlur : applyEdgeDetection, std::ref(topHalf));
+    thread t2((choice == 1) ? applyGaussianBlur : applyEdgeDetection, std::ref(bottomHalf));
 
-    // Wait for both halves to be processed
-    {
-        unique_lock<mutex> lock(mtx);
-        cv.wait(lock, []{ return topHalfProcessed && bottomHalfProcessed; });
-    }
-
-    // Combine both halves back into the original image
-    topHalf.copyTo(img(Rect(0, 0, img.cols, img.rows / 2)));
-    bottomHalf.copyTo(img(Rect(0, img.rows / 2, img.cols, img.rows / 2)));
-
-    // Join the threads after processing
     t1.join();
     t2.join();
 }
 
 int main() {
+    
+
     string filename = "/Users/mathisserra/Desktop/Github/B2_Laplateforme/CPMULTI/assets/totorableu.png";
     Mat img = imread(filename);
 
@@ -92,9 +52,10 @@ int main() {
         return -1;
     }
 
-    // Create a copy of the image for the Single-thread and the Multi-thread
-    Mat imgSingleThread = img.clone();
-    Mat imgMultiThread = img.clone();
+    // Create a Copie of the image for the Single-thread and the multi-thread
+    Mat imgSingleThread = img.clone();  // avoide to load again and again the image and free some memory 
+    Mat imgMultiThread = img.clone();  
+    
 
     cout << "Choose processing method: \n1 - Gaussian Blur\n2 - Edge Detection\nEnter choice: ";
     int choice;
@@ -105,17 +66,17 @@ int main() {
         return -1;
     }
 
-    // Version Sequential (Single-threaded)
+    // Version Sequenciel
     auto start = high_resolution_clock::now();
     singleThreadProcessing(imgSingleThread, choice);
     auto end = high_resolution_clock::now();
     cout << "Sequential execution time: " << duration_cast<milliseconds>(end - start).count() << " ms" << endl;
 
-    namedWindow("Single-thread Processing", WINDOW_NORMAL);
+    namedWindow("Single-thread Processing", WINDOW_NORMAL); 
     imshow("Single-thread Processing", imgSingleThread);
     waitKey(0);
 
-    // Version Multi-threaded
+    // Version Multi-Thread
     start = high_resolution_clock::now();
     multiThreadProcessing(imgMultiThread, choice);
     end = high_resolution_clock::now();
@@ -128,3 +89,8 @@ int main() {
     destroyAllWindows();
     return 0;
 }
+
+
+
+
+// /Users/mathisserra/Downloads/totoro blanc.png
