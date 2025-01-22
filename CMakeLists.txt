@@ -13,7 +13,7 @@ find_package(OpenCV REQUIRED)
 include_directories(${OpenCV_INCLUDE_DIRS})
 
 # Copier les fichiers .dll
-set(OpenCV_DLL_DIR "C:/tools/opencv/build/bin")
+set(OpenCV_DLL_DIR "C:/opencv/build/x64/vc16/bin")
 file(GLOB OpenCV_DLLS "${OpenCV_DLL_DIR}/*.dll")
 file(COPY ${OpenCV_DLLS} DESTINATION ${CMAKE_BINARY_DIR})
 
