@@ -23,12 +23,22 @@ void ImageProcessor::singleThreadProcessing(Mat &img, int choice) {
 }
 
 void ImageProcessor::multiThreadProcessing(Mat &img, int choice) {
-    Mat topHalf = img(Rect(0, 0, img.cols, img.rows / 2));
-    Mat bottomHalf = img(Rect(0, img.rows / 2, img.cols, img.rows / 2));
+    Mat topHalf = img(Rect(0, 0, img.cols, img.rows / 2)).clone();
+    Mat bottomHalf = img(Rect(0, img.rows / 2, img.cols, img.rows / 2)).clone();
 
     thread t1((choice == 1) ? applyGaussianBlur : applyEdgeDetection, std::ref(topHalf));
     thread t2((choice == 1) ? applyGaussianBlur : applyEdgeDetection, std::ref(bottomHalf));
 
     t1.join();
     t2.join();
+
+    // Vérifier si l'image originale est en couleur et reconvertir si nécessaire
+    if (img.channels() == 3 && topHalf.channels() == 1) {
+        cvtColor(topHalf, topHalf, COLOR_GRAY2BGR);
+        cvtColor(bottomHalf, bottomHalf, COLOR_GRAY2BGR);
+    }
+
+    topHalf.copyTo(img(Rect(0, 0, img.cols, img.rows / 2)));
+    bottomHalf.copyTo(img(Rect(0, img.rows / 2, img.cols, img.rows / 2)));
+
 }
