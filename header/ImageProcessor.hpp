@@ -7,8 +7,8 @@ class ImageProcessor {
 public:
     static void applyGaussianBlur(cv::Mat &img);
     static void applyEdgeDetection(cv::Mat &img);
-    static void singleThreadProcessing(cv::Mat &img, int choice);
-    static void multiThreadProcessing(cv::Mat &img, int choice);
+    static void singleThreadProcessing(cv::Mat &img, char choice);
+    static void multiThreadProcessing(cv::Mat &img, char choice);
 };
 
 #endif

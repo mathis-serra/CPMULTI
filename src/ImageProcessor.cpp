@@ -14,20 +14,20 @@ void ImageProcessor::applyEdgeDetection(Mat &img) {
     Canny(gray, img, 100, 200);
 }
 
-void ImageProcessor::singleThreadProcessing(Mat &img, int choice) {
-    if (choice == 1) {
+void ImageProcessor::singleThreadProcessing(Mat &img, char choice) {
+    if (choice == 'b') {
         applyGaussianBlur(img);
-    } else if (choice == 2) {
+    } else if (choice == 'e') {
         applyEdgeDetection(img);
     }
 }
 
-void ImageProcessor::multiThreadProcessing(Mat &img, int choice) {
+void ImageProcessor::multiThreadProcessing(Mat &img, char choice) {
     Mat topHalf = img(Rect(0, 0, img.cols, img.rows / 2)).clone();
     Mat bottomHalf = img(Rect(0, img.rows / 2, img.cols, img.rows / 2)).clone();
 
-    thread t1((choice == 1) ? applyGaussianBlur : applyEdgeDetection, std::ref(topHalf));
-    thread t2((choice == 1) ? applyGaussianBlur : applyEdgeDetection, std::ref(bottomHalf));
+    thread t1((choice == 'b') ? applyGaussianBlur : applyEdgeDetection, std::ref(topHalf));
+    thread t2((choice == 'b') ? applyGaussianBlur : applyEdgeDetection, std::ref(bottomHalf));
 
     t1.join();
     t2.join();

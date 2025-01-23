@@ -14,10 +14,10 @@ Mat Utils::loadImage(const string &filename) {
 }
 
 int Utils::getUserChoice() {
-    cout << "Choose processing method: \n1 - Gaussian Blur\n2 - Edge Detection\nEnter choice: ";
-    int choice;
+    cout << "Choose processing method: \nb - Gaussian Blur\ne - Edge Detection\nEnter choice: ";
+    char choice;
     cin >> choice;
-    if (choice != 1 && choice != 2) {
+    if (choice != 'e' && choice != 'b') {
         cerr << "Invalid choice!" << endl;
         exit(-1);
     }
