@@ -65,21 +65,40 @@ void multiThreadProcessing(Mat &img, int choice) {
     t2.join();
 }
 
+void showIntroImage(const string &introImagePath) {
+    Mat introImage = imread(introImagePath);
+    if (introImage.empty()) {
+        cerr << "Error: could not open intro image file." << endl;
+        return;
+    }
+
+    namedWindow("Introduction", WINDOW_NORMAL);
+    cv::setWindowProperty("Introduction", WND_PROP_TOPMOST, 1);
+
+    while (true) {
+        imshow("Introduction", introImage);
+        if (waitKey(10) == 27) { // ferme la fenêtre si on appuie sur échap
+            break;
+        }
+    }
+}
+
 int main() {
     cv::utils::logging::setLogLevel(cv::utils::logging::LOG_LEVEL_SILENT);
 
+
+    string introImagePath = "C:/Users/drvba/OneDrive/Bureau/infoIntro.png";
+    thread introThread(showIntroImage, introImagePath);
+
     string filename = "C:/Users/drvba/OneDrive/Bureau/test_image.png";
     Mat img = imread(filename);
-
     if (img.empty()) {
-        cerr << "Error: could not open image file" << endl;
+        cerr << "Error: could not open image file." << endl;
         return -1;
     }
 
-    // Create a Copie of the image for the Single-thread and the multi-thread
-    Mat imgSingleThread = img.clone();  // avoide to load again and again the image and free some memory 
-    Mat imgMultiThread = img.clone();  
-    
+    Mat imgSingleThread = img.clone();
+    Mat imgMultiThread = img.clone();
 
     cout << "Choose processing method: \n1 - Gaussian Blur\n2 - Edge Detection\n3 - Rotation\nEnter choice: ";
     int choice;
@@ -90,18 +109,17 @@ int main() {
         return -1;
     }
 
-    // Version Sequenciel
+    // Traitement séquentiel
     auto start = high_resolution_clock::now();
     singleThreadProcessing(imgSingleThread, choice);
     auto end = high_resolution_clock::now();
     cout << "Sequential execution time: " << duration_cast<milliseconds>(end - start).count() << " ms" << endl;
 
-    namedWindow("Single-thread Processing", WINDOW_NORMAL); 
+    namedWindow("Single-thread Processing", WINDOW_NORMAL);
     imshow("Single-thread Processing", imgSingleThread);
     cv::setWindowProperty("Single-thread Processing", WND_PROP_TOPMOST, 1);
-    waitKey(0);
 
-    // Version Multi-Thread
+    // Traitement multi-thread
     start = high_resolution_clock::now();
     multiThreadProcessing(imgMultiThread, choice);
     end = high_resolution_clock::now();
@@ -109,9 +127,12 @@ int main() {
 
     namedWindow("Multi-thread Processing", WINDOW_NORMAL);
     imshow("Multi-thread Processing", imgMultiThread);
-    cv::setWindowProperty("Single-thread Processing", WND_PROP_TOPMOST, 1);
+    cv::setWindowProperty("Multi-thread Processing", WND_PROP_TOPMOST, 1);
+
     waitKey(0);
 
+
+    introThread.detach();
     destroyAllWindows();
     return 0;
 }
